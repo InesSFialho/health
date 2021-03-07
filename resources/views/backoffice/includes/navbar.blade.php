@@ -21,7 +21,8 @@
         
         
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" data-parent="#sidebar" href="{{ route('backoffice.profile.index') }}">{{ __('Perfil') }}</a>
+            <a class="dropdown-item" data-parent="#sidebar" href="{{ route('backoffice.profile.index') }}">{{ __('My Account') }}</a>
+            <a class="dropdown-item" data-parent="#sidebar" href="{{ route('user.health.show', auth()->user()->id) }}">{{ __('My Health') }}</a>
             
             <a href="#" class="dropdown-item" data-parent="#sidebar">
             <div class="dropdown-divider"></div>

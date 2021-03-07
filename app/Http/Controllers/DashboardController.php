@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
-use App\Invoice;
+use App\User;
 use App\Supplier;
 
 
@@ -19,7 +19,8 @@ class DashboardController extends Controller
     
     public function index()
     {
-        return view('backoffice.dashboard.index');
+        $user = User::find(auth()->user()->id);
+        return view('backoffice.dashboard.index', compact('user'));
     }
 
     public function changeLanguage($locale)

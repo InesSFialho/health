@@ -60,16 +60,4 @@
 
         </li>
     </ul>
-    <div class="sidebar-footer">
-        <!-- <div id="sidebar-brand-mage" class="text-center">
-            <a class="left-logo" href="#">
-                <img id="left-bottom-logo-img" src="{{ asset('/images/logo_1.png') }}" />
-            </a>
-        </div> -->
-        <!-- <h5>{{ str_replace('.', ' ', config('app.name')) }}</h5> -->
-    </div>
-    <a href="https://www.develop2you.com/" class="sidebar-signature" title="develop to you" target="_blank">
-        <div class="sidebar-signature-name">DEVELOP<strong>to</strong>YOU</div>
-        <div class="version">v0.01</div>
-    </a>
 </nav>

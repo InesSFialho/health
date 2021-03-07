@@ -44,11 +44,11 @@
 									<td class="d-flex">
 									<a class="ml-2" href="{{ route('dashboard.users.pass', $user->id) }}"><i class="fa fa-key mr-1" title="{{ __('Password') }}"></i></a>
 									<a class="ml-2" href="{{ route('dashboard.users.edit', $user->id) }}"><i class="fa fa-edit mr-1" title="{{ __('Edit') }}"></i></a>
-										@if ($user->id != auth()->user()->id)
+										{{-- @if ($user->id != auth()->user()->id)
 											<a class="ml-2" href="{{ route('dashboard.users.destroy', $user->id) }}"><i class="fa fa-trash mr-1" title="{{ __('Delete') }}"></i></a>
 										@else
 											<a href=""><i class="text-secondary ml-2 fa fa-trash mr-1" title="{{ __('Not Available') }}"></i></a>
-										@endif
+										@endif --}}
 									</td>
 								</tr>
 							@empty

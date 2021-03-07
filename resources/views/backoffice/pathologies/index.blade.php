@@ -36,14 +36,14 @@
 								<tr scope="row">
 									<td class="text-left text-nowrap">{{ $pathology->name }}</td>
 									<td class="text-center text-nowrap">
-										<a class="ml-2" href="{{ route('pathologies.edit', $pathology->id) }}">
+										{{--<a class="ml-2" href="{{ route('pathologies.edit', $pathology->id) }}">
 											<i class="fa fa-edit mr-1" title="{{ __('Edit') }}">
 											</i>
 										</a>
-										<a class="ml-2" href="{{ route('pathologies.destroy', $pathology->id) }}">
+										 <a class="ml-2" href="{{ route('pathologies.destroy', $pathology->id) }}">
 											<i class="fa fa-trash mr-1" title="{{ __('Delete') }}">
 											</i>
-										</a>
+										</a> --}}
 									</td>
 								</tr>
 							@empty

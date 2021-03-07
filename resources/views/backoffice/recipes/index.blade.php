@@ -40,14 +40,14 @@
 											<i class="fas fa-book-medical mr-1" title="{{ __('Pathologies') }}">
 											</i>
 										</a>
-										<a class="ml-2" href="{{ route('recipes.edit', $recipe->id) }}">
+										{{--<a class="ml-2" href="{{ route('recipes.edit', $recipe->id) }}">
 											<i class="fa fa-edit mr-1" title="{{ __('Edit') }}">
 											</i>
 										</a>
-										<a class="ml-2" href="{{ route('recipes.destroy', $recipe->id) }}">
+										 <a class="ml-2" href="{{ route('recipes.destroy', $recipe->id) }}">
 											<i class="fa fa-trash mr-1" title="{{ __('Delete') }}">
 											</i>
-										</a>
+										</a> --}}
 									</td>
 								</tr>
 							@empty

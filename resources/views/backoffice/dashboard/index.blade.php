@@ -18,27 +18,29 @@
     <div class="col">
         <div class="card mb-2">
             <div class="card-body">
-                <div class="d-flex flex-wrap justify-content-around">
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="" style="height: 80%; object-fit: cover;" src="https://smartcharge.com.br/images/paginas/pagina-default.png" alt="Card image cap"
-                        >
-                        <div class="card-body" style="height: 20%;">
-                            <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{ __('A Sua Lista de Receitas Personalizada!') }}</h5>
+				<br>
+                <div class="row">
+                    @forelse ($user->allowed_recipes() as $recipe)
+                    <div class="col-lg-3 pb-2">
+                        <div class="card">
+                            <div class="card-body text-nowrap">
+                                {{$recipe->title}}
+                                
+                            </div>
                         </div>
                     </div>
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="" style="height: 80%; object-fit: cover;" src="https://images.happycow.net/venues/1024/11/12/hcmp111218_399663.jpeg" alt="Card image cap">
-                        <div class="card-body" style="height: 20%;">
-                            <h5 class="card-title">Card title</h5>
+                   
+                        @empty
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body text-nowrap">
+                                    {{__('Não existem receitas para si, consulte o administrador!')}}
+                                </div>
+                            </div>
                         </div>
+                        @endforelse
                     </div>
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="" style="height: 80%; object-fit: cover;" src="https://www.themediterraneandish.com/wp-content/uploads/2017/09/Egyptian-Vegan-Stew-with-Peas-and-carrots-The-Mediterranean-Dish-5.jpg" alt="Card image cap">
-                        <div class="card-body" style="height: 20%;">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -138,6 +138,19 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new \App\Notifications\CustomVerifyEmail);
     }
 
+    public function _pathologies()
+    {
+        $pathologies = PathologyUser::select(
+            'pathologies.*',
+            'pathology_users.have')
+        ->join('pathologies', 'pathologies.id', '=', 'pathology_users.pathology_id')
+        ->where('user_id', $this->id)
+        ->where('pathology_users.have', 1)
+        ->get();
+
+        return $pathologies;
+    }
+
     public function pathologies()
     {
         $pathologies = PathologyUser::select(
@@ -145,8 +158,32 @@ class User extends Authenticatable implements MustVerifyEmail
             'pathology_users.have')
         ->join('pathologies', 'pathologies.id', '=', 'pathology_users.pathology_id')
         ->where('user_id', $this->id)
+        // ->where('pathology_users.have', 1)
         ->get();
 
         return $pathologies;
+    }
+
+    function allowed_recipes()
+    {
+        $not_allowed_recipe_ids = PathologyRecipe::select('pathology_recipes.recipe_id', 'pathology_recipes.pathology_id')
+        ->where('pathology_recipes.allowed', 0)
+        ->whereNULL('pathology_recipes.deleted_at')
+        ->distinct()
+        ->get('pathology_recipes.recipe_id', 'pathology_recipes.pathology_id');
+
+        $recipes = [];
+
+        foreach ($this->_pathologies() as $pathology) {
+            foreach ($not_allowed_recipe_ids as $recipe) {
+                if ($recipe->pathology_id == $pathology->id) {
+                    $recipes[] = $recipe->recipe_id;
+                }
+            }
+        }
+        
+        $allowed_recipes = Recipe::whereNotIn('id', $recipes)->get();
+
+        return $allowed_recipes;
     }
 }
