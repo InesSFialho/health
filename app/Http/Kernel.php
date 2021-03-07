@@ -14,11 +14,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\TrustProxies::class,
     ];
 
     /**
@@ -35,12 +35,24 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\SetLocaleMiddleware::class,
+            \App\Http\Middleware\LastUserActivity::class,
         ],
 
         'api' => [
-            'throttle:60,1',
-            'bindings',
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            // \App\Http\Middleware\SetLocaleMiddleware::class,
         ],
+        // 'api' => [
+        //     'throttle:60,1',
+        //     'bindings',
+        // ],
     ];
 
     /**
@@ -60,6 +72,13 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'isActive' => \App\Http\Middleware\IsActive::class,
+        'hasProduct' => \App\Http\Middleware\HasProduct::class,
+        'hasZone' => \App\Http\Middleware\HasZone::class,
+        'hasTheme' => \App\Http\Middleware\HasTheme::class,
+        'hasClient' => \App\Http\Middleware\HasClient::class,
+        'hasMaterial' => \App\Http\Middleware\HasMaterial::class,
+        'hasPermission' => \App\Http\Middleware\HasPermission::class,
     ];
 
     /**

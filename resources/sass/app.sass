@@ -1,0 +1,98 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700")
+
+// Variables
+@import 'variables'
+
+// Bootstrap 4
+@import '~bootstrap/scss/bootstrap'
+
+// Font Awesome 5
+@import '~@fortawesome/fontawesome-free/scss/fontawesome'
+@import '~@fortawesome/fontawesome-free/scss/brands'
+@import '~@fortawesome/fontawesome-free/scss/regular'
+@import '~@fortawesome/fontawesome-free/scss/solid'
+
+//Tabulator
+@import '~tabulator-tables/src/scss/bootstrap/tabulator_bootstrap4'
+
+@import '~file-upload-with-preview/src/file-upload-with-preview'
+@import 'file_upload'
+
+// Flag Icon CSS
+@import '~flag-icon-css/sass/flag-icon'
+
+@import 'auth/login'
+
+@import "nav"
+@import "prices"
+@import "sidebar"
+@import "shoppingCart"
+@import "checkOut"
+
+body
+	font-family: "Poppins", sans-serif
+	height: 100vh
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	background-color: #ececec
+
+#content
+	height: 100vh
+	overflow: auto
+
+p
+	font-family: 'Poppins', sans-serif
+	font-size: 1.1em
+	font-weight: 300
+	line-height: 1.7em
+	color: #999
+
+a
+	color: inherit
+	transition: all 0.3s
+	&:hover, &:focus
+		transition: all 0.3s
+
+.btn
+	text-decoration: none
+	&:hover, &:focus
+		text-decoration: none
+
+.modal-mask
+	position: fixed
+	z-index: 9998
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0)
+	display: table
+	transition: opacity .3s ease
+
+.modal-wrapper
+	display: table-cell
+	vertical-align: middle
+
+.Campaign-carousel .carousel-item img 
+	height: 350px
+	object-fit: cover
+	vertical-align: middle
+
+.navbar-icon
+	font-size:20px
+	margin-left:10px
+
+.flag-icon.navbar-icon
+	font-size: 17px
+
+img.img-fluid.productDesign
+	max-width: 100%    
+	max-height: 250px
+	height: auto
+
+.custom-file-container__image-preview
+	background-size: contain
+	overflow: auto

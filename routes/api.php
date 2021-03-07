@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+*/
+
+Route::get('/backoffice/imageDelete/{id}', [
+	'uses' => 'ImagesController@imageDelete',
+	'middleware' => ['auth'],
+	'as' => 'backoffice.imageDelete'
+]);
+
+Route::get('/backoffice/imageStar/{id}/{item}', [
+	'uses' => 'ImagesController@imageStar',
+	'middleware' => ['auth'],
+	'as' => 'backoffice.imageStar'
+]);
