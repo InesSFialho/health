@@ -33,5 +33,16 @@
     "My Health": "A Minha Saúde",
     "I Can Eat...": "Posso Comer...",
     "There are no recipes for you, contact the administrator": "Não existem receitas para si, consulte o administrador!",
-    "My Pathologies": "As minhas patologias"
+    "New pathology": "Nova Patologias",
+    "There are no clinical examination questions in the system!": "Não existem questões de análise clínica no sistema!",
+    "Questions": "Questões",
+    "Question": "Questão",
+    "Possible Choices": "Opções Possíveis",
+    "New Clinical Examination Question": "Nova Questão de Análise Clínica",
+    "Clinical Examination Questions": "Questões de Análise Clínica",
+    "Question successfully created!":"Questão criada com sucesso!",
+    "There are no options for this question!": "Não existem opções para esta questão!",
+    "Option successfully created!": "Opção criada com sucesso!",
+    "New option for:": "Nova opção para:",
+    "Option": "Opção"
 }

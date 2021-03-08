@@ -795,5 +795,6 @@ Route::put('users/{user_id}/pathologies/{pathology_id}/update', [
 ]);
 
 Route::resource('recipes', 'RecipeController');
-
+Route::resource('clinical-examination-questions', 'ClinicalExaminationQuestionController');
+Route::resource('clinical-examination-questions.options', 'QuestionOptionController');
 Route::resource('pathologies', 'PathologyController');

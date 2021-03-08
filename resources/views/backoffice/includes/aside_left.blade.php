@@ -30,6 +30,8 @@
                 <li><a href="{{ route('recipes.index') }}">{{ __('Recipes') }}</a></li>@endif
                 @if(Auth::user()->hasPermissionsOrRole(['view_pathologies']))
                 <li><a href="{{ route('pathologies.index') }}">{{ __('Pathologies') }}</a></li>@endif
+                @if(Auth::user()->hasPermissionsOrRole(['view_questions']))
+                <li><a href="{{ route('clinical-examination-questions.index') }}">{{ __('Questions') }}</a></li>@endif
             </ul>
         </li>
         @endif
