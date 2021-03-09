@@ -28,12 +28,20 @@
 						<thead>
 							<tr>
 								<th class="text-left text-nowrap" style="width: 10%">{{ __('Possible Choices') }}</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							@forelse($question->options() as $option)
 								<tr scope="row">
 									<td class="text-left text-nowrap">{{ $option->name }}</td>
+									<td class="text-right text-nowrap">
+										<form method="post" action="{{ route('clinical-examination-questions.options.destroy', [$question->id, $option->id]) }}">
+											@method('DELETE')
+											@csrf
+											<button class="btn border-none bg-transparent p-0" type="submit"><i class="fa fa-trash mr-1" title="{{ __('Delete') }}"></i></button>
+										</form>
+									</td>
 								</tr>
 							@empty
 								<td colspan="2">{{__('There are no options for this question!')}}</td>

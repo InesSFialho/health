@@ -22,6 +22,7 @@ use App\Company;
 use App\Permission;
 use App\Permission_user;
 use App\PathologyUser;
+use App\Pathology;
 use Session;
 use Cache;
 

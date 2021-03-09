@@ -96,8 +96,12 @@ class QuestionOptionController extends Controller
      * @param  \App\QuestionOption  $questionOption
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QuestionOption $questionOption)
+    public function destroy($question_id, $option_id)
     {
-        //
+        QuestionOption::destroy($option_id);
+
+        flash('Option successfully deleted')->success();
+    
+        return redirect()->route('clinical-examination-questions.options.index', $question_id);
     }
 }
